@@ -40,6 +40,13 @@
 	$output = str_replace('m800le', 'm1200le', $tadaa);
 	// also replace annoying special char (which is not really ASCII)
 	$output = str_replace('➹', 'Location: ', $output);
+	// and replace some äöü
+	$output = str_replace('ä', 'ae', $output);
+	$output = str_replace('ö', 'oe', $output);
+	$output = str_replace('ü', 'ue', $output);
+	$output = str_replace('Ä', 'Ae', $output);
+	$output = str_replace('Ö', 'Oe', $output);
+	$output = str_replace('Ü', 'Ue', $output);
 
 	// now write the stuff to the rss feed
 	// file_put_contents($output, $tadaa); // disabled due to insufficient rights
